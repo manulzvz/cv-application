@@ -6,7 +6,7 @@ Aplicación web para crear y editar tu Currículum Vitae, desarrollada como part
 
 ## 🚀 Demo en línea
 
-🔗 [Probar la aplicación](TU_ENLACE_NETLIFY_AQUI)
+🔗 [Probar la aplicación](https://cv-react-application.netlify.app/)
 
 ---
 
