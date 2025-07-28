@@ -1,5 +1,4 @@
 import DisplaySection from "./DisplaySection";
-import "../styles/Education.css";
 
 function Education({educationInfo, setEducationInfo, isEditing, setIsEditing}) {
     
@@ -13,56 +12,55 @@ function Education({educationInfo, setEducationInfo, isEditing, setIsEditing}) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    setIsEditing(false); //Cambia a modo visualizacion
+    setIsEditing(false);
   }
 
   if (isEditing) {
     return (
-      <form className="edu-form" onSubmit={handleSubmit}>
-        <div>
-          <label>
-            Escuela de estudios superiores:
-            <input
-              type="text"
-              name="schoolName"
-              required
-              value={educationInfo.schoolName}
-              onChange={handleChange}
-            />
-          </label>
+      <form className="form-container" onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label>Escuela de estudios superiores:</label>
+          <input
+            type="text"
+            name="schoolName"
+            required
+            value={educationInfo.schoolName}
+            onChange={handleChange}
+            placeholder="Nombre de la institución"
+          />
         </div>
-        <div>
-          <label>
-            Titulo de estudios realizados:
-            <input
-              type="text"
-              name="titleOfStudy"
-              required
-              value={educationInfo.titleOfStudy}
-              onChange={handleChange}
-            />
-          </label>
+        
+        <div className="form-group">
+          <label>Título de estudios realizados:</label>
+          <input
+            type="text"
+            name="titleOfStudy"
+            required
+            value={educationInfo.titleOfStudy}
+            onChange={handleChange}
+            placeholder="Ej: Ingeniería en Sistemas"
+          />
         </div>
-        <div>
-          <label>
-            Fecha de conclusion de estudios:
-            <input
-              type="date"
-              name="dateOfStudy"
-              required
-              value={educationInfo.dateOfStudy}
-              onChange={handleChange}
-            />
-          </label>
+        
+        <div className="form-group">
+          <label>Fecha de conclusión de estudios:</label>
+          <input
+            type="date"
+            name="dateOfStudy"
+            required
+            value={educationInfo.dateOfStudy}
+            onChange={handleChange}
+          />
         </div>
-        <button type="submit">Guardar</button>
+        
+        <button type="submit" className="btn btn-primary">Guardar</button>
       </form>
     );
   } else {
     return (
       <div>
         <DisplaySection data={educationInfo}/>
-        <button onClick={() => setIsEditing(true)}>Editar</button>
+        <button onClick={() => setIsEditing(true)} className="btn btn-secondary">Editar</button>
       </div>  
     );
   }

@@ -1,5 +1,4 @@
 import DisplaySection from "./DisplaySection";
-import "../styles/Info.css";
 
 function Info({ generalInfo, setGeneralInfo, isEditing, setIsEditing }) {
   function handleChange(e) {
@@ -12,73 +11,71 @@ function Info({ generalInfo, setGeneralInfo, isEditing, setIsEditing }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    setIsEditing(false); //Cambia a modo visualizacion
+    setIsEditing(false);
   }
 
   if (isEditing) {
     return (
-      <form className="info-form" onSubmit={handleSubmit}>
-        <div>
-          <label>
-            Nombre Completo:
-            <input
-              type="text"
-              name="fullName"
-              required
-              value={generalInfo.fullName}
-              onChange={handleChange}
-            />
-          </label>
+      <form className="form-container" onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label>Nombre Completo:</label>
+          <input
+            type="text"
+            name="fullName"
+            required
+            value={generalInfo.fullName}
+            onChange={handleChange}
+            placeholder="Ingresa tu nombre completo"
+          />
         </div>
-        <div>
-          <label>
-            Fecha de Nacimiento:
-            <input
-              type="date"
-              name="birthDate"
-              required
-              value={generalInfo.birthDate}
-              onChange={handleChange}
-            />
-          </label>
+        
+        <div className="form-group">
+          <label>Fecha de Nacimiento:</label>
+          <input
+            type="date"
+            name="birthDate"
+            required
+            value={generalInfo.birthDate}
+            onChange={handleChange}
+          />
         </div>
-        <div>
-          <label>
-            Email:
-            <input
-              type="email"
-              name="email"
-              required
-              value={generalInfo.email}
-              onChange={handleChange}
-              pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$"
-              title="Ingresa un correo electronico valido"
-            />
-          </label>
+        
+        <div className="form-group">
+          <label>Email:</label>
+          <input
+            type="email"
+            name="email"
+            required
+            value={generalInfo.email}
+            onChange={handleChange}
+            pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$"
+            title="Ingresa un correo electronico valido"
+            placeholder="ejemplo@correo.com"
+          />
         </div>
-        <div>
-          <label>
-            Phone:
-            <input
-              type="tel"
-              name="phone"
-              required
-              value={generalInfo.phone}
-              onChange={handleChange}
-              pattern="\d{10,15}$"
-              title="Ingresa solo numeros, entre 10 y 15 digitos"
-            />
-          </label>
+        
+        <div className="form-group">
+          <label>Teléfono:</label>
+          <input
+            type="tel"
+            name="phone"
+            required
+            value={generalInfo.phone}
+            onChange={handleChange}
+            pattern="\d{10,15}$"
+            title="Ingresa solo numeros, entre 10 y 15 digitos"
+            placeholder="1234567890"
+          />
         </div>
-        <button type="submit">Guardar</button>
+        
+        <button type="submit" className="btn btn-primary">Guardar</button>
       </form>
     );
   } else {
     return (
       <div>
         <DisplaySection data={generalInfo}/>
-        <button onClick={() => setIsEditing(true)}>Editar</button>
-
+        <button onClick={() => setIsEditing(true)} className="btn btn-secondary">Editar</button>
       </div>  
     );
   }

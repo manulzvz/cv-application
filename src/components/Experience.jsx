@@ -1,5 +1,4 @@
 import DisplaySection from "./DisplaySection";
-import "../styles/Experience.css";
 
 function Experience({experienceInfo, setExperienceInfo, isEditing, setIsEditing}) {
   
@@ -23,76 +22,72 @@ function Experience({experienceInfo, setExperienceInfo, isEditing, setIsEditing}
 
   if (isEditing) {
     return (
-      <form className="exp-form" onSubmit={handleSubmit}>
-        <div>
-          <label>
-            Empresa: 
-            <input
-              type="text"
-              name="companyName"
-              required
-              value={experienceInfo.companyName}
-              onChange={handleChange}
-            />
-          </label>
+      <form className="form-container" onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label>Empresa:</label>
+          <input
+            type="text"
+            name="companyName"
+            required
+            value={experienceInfo.companyName}
+            onChange={handleChange}
+            placeholder="Nombre de la empresa"
+          />
         </div>
-        <div>
-          <label>
-            Posicion: 
-            <input
-              type="text"
-              name="positionTitle"
-              required
-              value={experienceInfo.positionTitle}
-              onChange={handleChange}
-            />
-          </label>
+        
+        <div className="form-group">
+          <label>Posición:</label>
+          <input
+            type="text"
+            name="positionTitle"
+            required
+            value={experienceInfo.positionTitle}
+            onChange={handleChange}
+            placeholder="Tu cargo o puesto"
+          />
         </div>
-        <div>
-          <label>
-            Responsabilidades: 
-            <input
-              type="text"
-              name="mainResponsabilities"
-              required
-              value={experienceInfo.mainResponsabilities}
-              onChange={handleChange}
-            />
-          </label>
+        
+        <div className="form-group">
+          <label>Responsabilidades:</label>
+          <textarea
+            name="mainResponsabilities"
+            required
+            value={experienceInfo.mainResponsabilities}
+            onChange={handleChange}
+            placeholder="Describe tus principales responsabilidades"
+          />
         </div>
-        <div>
-          <label>
-            Fecha de inicio: 
-            <input
-              type="date"
-              name="dateFrom"
-              required
-              value={experienceInfo.dateFrom}
-              onChange={handleChange}
-            />
-          </label>
+        
+        <div className="form-group">
+          <label>Fecha de inicio:</label>
+          <input
+            type="date"
+            name="dateFrom"
+            required
+            value={experienceInfo.dateFrom}
+            onChange={handleChange}
+          />
         </div>
-        <div>
-          <label>
-            Fecha de finalizacion: 
-            <input
-              type="date"
-              name="dateTo"
-              required
-              value={experienceInfo.dateTo}
-              onChange={handleChange}
-            />
-          </label>
+        
+        <div className="form-group">
+          <label>Fecha de finalización:</label>
+          <input
+            type="date"
+            name="dateTo"
+            required
+            value={experienceInfo.dateTo}
+            onChange={handleChange}
+          />
         </div>
-        <button type="submit">Guardar</button>
+        
+        <button type="submit" className="btn btn-primary">Guardar</button>
       </form>
     );
   } else {
     return (
       <div>
         <DisplaySection data={experienceInfo}/>
-        <button onClick={() => setIsEditing(true)}>Editar</button>
-
+        <button onClick={() => setIsEditing(true)} className="btn btn-secondary">Editar</button>
       </div>  
     );
   }
