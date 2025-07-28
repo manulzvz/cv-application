@@ -1,4 +1,5 @@
 import DisplaySection from "./DisplaySection";
+import "../styles/Experience.css";
 
 function Experience({experienceInfo, setExperienceInfo, isEditing, setIsEditing}) {
   
@@ -22,7 +23,7 @@ function Experience({experienceInfo, setExperienceInfo, isEditing, setIsEditing}
 
   if (isEditing) {
     return (
-      <form onSubmit={handleSubmit}>
+      <form className="exp-form" onSubmit={handleSubmit}>
         <div>
           <label>
             Empresa: 
