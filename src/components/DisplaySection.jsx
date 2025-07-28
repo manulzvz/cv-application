@@ -7,7 +7,12 @@ function DisplaySection({data}) {
         phone: "Telefono",
         schoolName: "Escuela",
         titleOfStudy: "Estudios",
-        dateOfStudy: "Fecha de finalizacion"
+        dateOfStudy: "Fecha de finalizacion",
+        companyName: "Nombre de la empresa",
+        positionTitle: "Posicion",
+        mainResponsabilities: "Tareas destacadas",
+        dateFrom: "Fecha de inicio",
+        dateTo: "Fecha de finalizacion"
     }
 
 

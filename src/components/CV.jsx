@@ -18,6 +18,14 @@ function CV() {
         dateOfStudy: '',
     });
 
+    const [experienceInfo, setExperienceInfo] = useState({
+        companyName: '',
+        positionTitle: '',
+        mainResponsabilities: '',
+        dateFrom: '',
+        dateTo: '',
+    })
+
     const [isEditingInfo, setIsEditingInfo] = useState(true);
     const [isEditingEducation, setIsEditingEducation] = useState(true);
     const [isEditingExperience, setIsEditingExperience] = useState(true);
@@ -37,7 +45,8 @@ function CV() {
                 setIsEditing={setIsEditingEducation}
             />
             <Experience
-                // ...props
+                experienceInfo={experienceInfo}
+                setExperienceInfo={setExperienceInfo}
                 isEditing={isEditingExperience}
                 setIsEditing={setIsEditingExperience}
             />
