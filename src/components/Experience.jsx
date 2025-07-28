@@ -12,8 +12,13 @@ function Experience({experienceInfo, setExperienceInfo, isEditing, setIsEditing}
 
   function handleSubmit(e) {
     e.preventDefault();
-    setIsEditing(false); //Cambia a modo visualizacion
-  }
+    if (experienceInfo.dateTo < experienceInfo.dateFrom) {
+      alert("La fecha de finalización no puede ser anterior a la de inicio.");
+     return;
+    }
+    setIsEditing(false);
+}
+
 
   if (isEditing) {
     return (
