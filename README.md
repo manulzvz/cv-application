@@ -71,5 +71,5 @@ Este proyecto forma parte de mi portafolio de aprendizaje. Si tienes sugerencias
 
 ## 📫 Contacto
 
-* [Tu LinkedIn](https://www.linkedin.com/in/TU_USUARIO/)
-* [GitHub](https://github.com/TU_USUARIO)
+* [Tu LinkedIn](https://www.linkedin.com/in/manulzvz/)
+* [GitHub](https://github.com/manulzvz)
