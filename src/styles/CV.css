@@ -52,6 +52,62 @@
   border-radius: 0.5rem;
   background: white;
   transition: border-color 0.2s;
+  /* Normalize input sizing across browsers */
+  min-height: 3rem;
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* Specific styling for date inputs to ensure consistent sizing */
+.form-group input[type="date"] {
+  min-height: 3rem;
+  height: 3rem;
+  line-height: 1.5;
+  /* iOS Safari specific fixes */
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Additional iOS Safari fixes */
+@supports (-webkit-touch-callout: none) {
+  .form-group input[type="date"] {
+    /* iOS Safari specific height adjustment */
+    height: 3rem;
+    min-height: 3rem;
+    font-size: 1rem;
+    /* Prevent iOS zoom on focus */
+    -webkit-text-size-adjust: 100%;
+    /* Ensure date inputs don't overflow */
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* Fix for iOS date input width issues */
+.form-group input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+/* Ensure consistent font sizing to prevent iOS zoom */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  select:focus,
+  textarea:focus,
+  input:focus {
+    font-size: 1rem;
+  }
+}
+
+/* Ensure consistent placeholder styling */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #94a3b8;
+  opacity: 1;
 }
 
 .form-group input:focus,
