@@ -1,4 +1,5 @@
 import DisplaySection from "./DisplaySection";
+import "../styles/Education.css";
 
 function Education({educationInfo, setEducationInfo, isEditing, setIsEditing}) {
     
@@ -17,7 +18,7 @@ function Education({educationInfo, setEducationInfo, isEditing, setIsEditing}) {
 
   if (isEditing) {
     return (
-      <form onSubmit={handleSubmit}>
+      <form className="edu-form" onSubmit={handleSubmit}>
         <div>
           <label>
             Escuela de estudios superiores:
