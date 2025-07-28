@@ -50,6 +50,8 @@ function Info({ generalInfo, setGeneralInfo, isEditing, setIsEditing }) {
               required
               value={generalInfo.email}
               onChange={handleChange}
+              pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$"
+              title="Ingresa un correo electronico valido"
             />
           </label>
         </div>
@@ -62,6 +64,8 @@ function Info({ generalInfo, setGeneralInfo, isEditing, setIsEditing }) {
               required
               value={generalInfo.phone}
               onChange={handleChange}
+              pattern="\d{10,15}$"
+              title="Ingresa solo numeros, entre 10 y 15 digitos"
             />
           </label>
         </div>
