@@ -12,6 +12,12 @@ function CV() {
         phone: '',
     });
 
+    const [educationInfo, setEducationInfo] = useState({
+        schoolName: '',
+        titleOfStudy: '',
+        dateOfStudy: '',
+    });
+
     const [isEditingInfo, setIsEditingInfo] = useState(true);
     const [isEditingEducation, setIsEditingEducation] = useState(true);
     const [isEditingExperience, setIsEditingExperience] = useState(true);
@@ -25,14 +31,15 @@ function CV() {
                 setIsEditing={setIsEditingInfo}
             />
             <Education
-                // ...props
+                educationInfo={educationInfo}
+                setEducationInfo={setEducationInfo}
                 isEditing={isEditingEducation}
-                setIsEditingEducation={setIsEditingEducation}
+                setIsEditing={setIsEditingEducation}
             />
             <Experience
                 // ...props
                 isEditing={isEditingExperience}
-                setIsEditingExperience={setIsEditingExperience}
+                setIsEditing={setIsEditingExperience}
             />
         </div>
     );

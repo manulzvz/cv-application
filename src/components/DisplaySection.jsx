@@ -4,7 +4,10 @@ function DisplaySection({data}) {
         fullName: "Nombre completo",
         birthDate: "Fecha de nacimiento",
         email: "Correo electronico",
-        phone: "Telefono"
+        phone: "Telefono",
+        schoolName: "Escuela",
+        titleOfStudy: "Estudios",
+        dateOfStudy: "Fecha de finalizacion"
     }
 
 
