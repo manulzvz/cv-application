@@ -1,4 +1,5 @@
 import DisplaySection from "./DisplaySection";
+import "../styles/Info.css";
 
 function Info({ generalInfo, setGeneralInfo, isEditing, setIsEditing }) {
   function handleChange(e) {
@@ -16,7 +17,7 @@ function Info({ generalInfo, setGeneralInfo, isEditing, setIsEditing }) {
 
   if (isEditing) {
     return (
-      <form onSubmit={handleSubmit}>
+      <form className="info-form" onSubmit={handleSubmit}>
         <div>
           <label>
             Nombre Completo:
